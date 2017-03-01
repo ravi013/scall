@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-scall",
-  "version": "1.1.5-dev",
+  "version": "1.0.0",
   "description": "Cordova scall Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
