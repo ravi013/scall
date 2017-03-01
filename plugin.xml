@@ -44,6 +44,8 @@
         </config-file>
 
         <source-file src="src/android/Scall.java" target-dir="src/org/apache/cordova/scall" />
+		<resource-file src="src/android/rtcc-6.3.5.jar" target="libs/rtcc.jar"/>
+
     </platform>
 
    
