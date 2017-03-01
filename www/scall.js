@@ -75,9 +75,9 @@ function Scall() {
  * @param {Function} successCallback The function to call when the heading data is available
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
-Scall.prototype.getInfo = function(successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'Scall.getInfo', arguments);
-    exec(successCallback, errorCallback, "Scall", "getDeviceInfo", []);
+Scall.prototype.call = function(successCallback, errorCallback) {
+    argscheck.checkArgs('fF', 'Scall.call', arguments);
+    exec(successCallback, errorCallback, "Scall", "placeCall", []);
 };
 
 module.exports = new Scall();

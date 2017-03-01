@@ -67,7 +67,7 @@ public class Scall extends CordovaPlugin {
      * @return                  True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("getDeviceInfo".equals(action)) {
+        if ("placeCall".equals(action)) {
             JSONObject r = new JSONObject();
             r.put("uuid", Scall.uuid);
             r.put("version", this.getOSVersion());
