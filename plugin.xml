@@ -42,9 +42,9 @@
                 <param name="android-package" value="org.apache.cordova.scall.Scall"/>
             </feature>
         </config-file>
-
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>   
         <source-file src="src/android/Scall.java" target-dir="src/org/apache/cordova/scall" />
-		<resource-file src="src/android/rtcc-6.3.5.jar" target="libs/rtcc.jar"/>
+		<!--<resource-file src="src/android/rtcc-6.3.5.jar" target="libs/rtcc.jar"/>-->
 
     </platform>
 
