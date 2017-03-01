@@ -22,12 +22,12 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-scall"
-    version="1.1.5-dev">
+    version="1.0.0">
     <name>SCALL</name>
     <description>Cordova Scall Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,device</keywords>
-    <repo>https://github.com/ravi013/scall.git/repo>
+    <repo>https://github.com/ravi013/scall.git</repo>
 
     <js-module src="www/scall.js" name="scall">
         <clobbers target="scall" />
