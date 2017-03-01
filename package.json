@@ -16,20 +16,7 @@
   "keywords": [
     "cordova",
     "scall",
-    "ecosystem:cordova",
-    "cordova-firefoxos",
-    "cordova-tizen",
-    "cordova-android",
-    "cordova-amazon-fireos",
-    "cordova-ubuntu",
-    "cordova-ios",
-    "cordova-blackberry10",
-    "cordova-wp7",
-    "cordova-wp8",
-    "cordova-windows8",
-    "cordova-windows",
-    "cordova-browser",
-    "cordova-osx"
+    "ecosystem:cordova"
   ],
   "scripts": {
     "test": "npm run jshint",

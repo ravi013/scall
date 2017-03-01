@@ -39,7 +39,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Scall" >
-                <param name="android-package" value="org.apache.cordova.device.Scall"/>
+                <param name="android-package" value="org.apache.cordova.scall.Scall"/>
             </feature>
         </config-file>
 
