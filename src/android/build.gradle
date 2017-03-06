@@ -1,6 +1,6 @@
 
 def packageName = getPackageName()
-ext.cdvMinSdkVersion = 25
+ext.cdvMinSdkVersion = 23
 ext.cdvBuildToolsVersion = "25.0.2"
 android {
 defaultConfig {
@@ -16,6 +16,7 @@ url 'https://s3.amazonaws.com/sightcall.maven.release'
 dependencies {
 compile fileTree(dir: 'libs', include: ['*.jar'])
 compile 'com.sightcall.universal:universal-sdk:2.11.0' // verify the latest version
+
 
 }
 
