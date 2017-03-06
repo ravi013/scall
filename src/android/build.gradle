@@ -1,28 +1,27 @@
-apply plugin: 'com.android.application'
 
+def packageName = getPackageName()
+ext.cdvMinSdkVersion = 25
+ext.cdvBuildToolsVersion = "25.0.2"
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
-
-    defaultConfig {
-        applicationId "net.rtccloud.tutorial.call"
-        minSdkVersion 14
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-    }
+defaultConfig {
+applicationId packageName
 }
-
+}
 repositories {
-    maven {
-        url 'https://s3.amazonaws.com/sightcall.maven.release'
-    }
+maven {
+url 'https://s3.amazonaws.com/sightcall.maven.release'
+}
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'net.rtccloud.sdk:rtcc:1.3.5' // verify the latest version
-    compile 'com.squareup.okhttp3:okhttp:3.4.2'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+compile fileTree(dir: 'libs', include: ['*.jar'])
+compile 'com.sightcall.universal:universal-sdk:2.11.0' // verify the latest version
+
+}
+
+def getPackageName() {
+def config = file("res/xml/config.xml").getText()
+def xml = new XmlParser(false, false).parseText(config)
+def id = xml.attribute("id")
+return id.replaceAll('-','_')
 }
