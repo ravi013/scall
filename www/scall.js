@@ -1,5 +1,4 @@
 
-
 var argscheck = require('cordova/argscheck'),
     channel = require('cordova/channel'),
     utils = require('cordova/utils'),
@@ -52,7 +51,6 @@ Scall.prototype.unregister = function(successCallback, errorCallback) {
     exec(successCallback, errorCallback, "Scall", "unregister", []);
 };
 Scall.prototype.call = function(url,successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'Scall.call', arguments);
     exec(successCallback, errorCallback, "Scall", "call", [{url:url}]);
 };
 
