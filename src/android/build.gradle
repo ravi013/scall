@@ -1,6 +1,6 @@
 
 def packageName = getPackageName()
-ext.cdvMinSdkVersion = 23
+ext.cdvMinSdkVersion = 22
 ext.cdvBuildToolsVersion = "25.0.2"
 android {
 defaultConfig {
