@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-scall.scall", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -48,22 +49,9 @@ function Scall() {
     var me = this;
 
     channel.onCordovaReady.subscribe(function() {
-        me.call(function(info) {
-            //ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
-            //TODO: CB-5105 native implementations should not return info.cordova
-            var buildLabel = cordova.version;
-            me.available = true;
-            me.platform = info.platform;
-            me.version = info.version;
-            me.uuid = info.uuid;
-            me.cordova = buildLabel;
-            me.model = info.model;
-            me.isVirtual = info.isVirtual;
-            me.manufacturer = info.manufacturer || 'unknown';
-            me.serial = info.serial || 'unknown';
-            channel.onCordovaInfoReady.fire();
+        me.register(function(info) {
+            
         },function(e) {
-            me.available = false;
             utils.alert("[ERROR] Error initializing Cordova: " + e);
         });
     });
@@ -75,9 +63,19 @@ function Scall() {
  * @param {Function} successCallback The function to call when the heading data is available
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
-Scall.prototype.call = function(successCallback, errorCallback) {
+Scall.prototype.register = function(successCallback, errorCallback) {
+    argscheck.checkArgs('fF', 'Scall.register', arguments);
+    exec(successCallback, errorCallback, "Scall", "register", []);
+};
+Scall.prototype.unregister = function(successCallback, errorCallback) {
+    argscheck.checkArgs('fF', 'Scall.unregister', arguments);
+    exec(successCallback, errorCallback, "Scall", "unregister", []);
+};
+Scall.prototype.call = function(url,successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'Scall.call', arguments);
-    exec(successCallback, errorCallback, "Scall", "placeCall", []);
+    exec(successCallback, errorCallback, "Scall", "call", [{url:url}]);
 };
 
 module.exports = new Scall();
+
+});

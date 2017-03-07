@@ -30,6 +30,8 @@ import org.json.JSONObject;
 
 import android.provider.Settings;
 
+import com.sightcall.universal.Universal;
+
 public class Scall extends CordovaPlugin {
     public static final String TAG = "Scall";
 
@@ -67,16 +69,20 @@ public class Scall extends CordovaPlugin {
      * @return                  True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("placeCall".equals(action)) {
-            JSONObject r = new JSONObject();
-            r.put("uuid", Scall.uuid);
-            r.put("version", this.getOSVersion());
-            r.put("platform", this.getPlatform());
-            r.put("model", this.getModel());
-            r.put("manufacturer", this.getManufacturer());
-	        r.put("isVirtual", this.isVirtual());
-            r.put("serial", this.getSerialNumber());
-            callbackContext.success(r);
+        if ("register".equals(action)) {
+            Universal.register(this);
+            callbackContext.success();
+        }
+        else if ("unregister".equals(action)) {
+            Universal.unregister(this);
+            callbackContext.success();
+        }
+        else  if ("call".equals(action)) {
+            final JSONObject options = args.getJSONObject(0);
+            final String url = options.getString("url");
+
+            Universal.start(url  /*java.lang.String*/);
+            callbackContext.success();
         }
         else {
             return false;
