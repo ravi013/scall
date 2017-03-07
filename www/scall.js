@@ -11,7 +11,7 @@ channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
- * phone, etc.
+ * phone, etc. 
  * @constructor
  */
 function Scall() {
