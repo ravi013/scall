@@ -28,11 +28,11 @@ function Scall() {
     var me = this;
 
     channel.onCordovaReady.subscribe(function() {
-        me.register(function(info) {
+        // //me.register(function(info) {
             
-        },function(e) {
-            utils.alert("[ERROR] Error initializing Cordova: " + e);
-        });
+        // },function(e) {
+        //     utils.alert("[ERROR] Error initializing Cordova: " + e);
+        // });
     });
 }
 
