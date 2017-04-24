@@ -5,9 +5,9 @@ var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec'),
     cordova = require('cordova');
 
-channel.createSticky('onCordovaInfoReady');
+channel.createSticky('onCordovaScallReady');
 // Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
+channel.waitForInitialization('onCordovaScallReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
@@ -26,9 +26,11 @@ function Scall() {
     this.serial = null;
 
     var me = this;
-
+  console.log("scall subscribe");
     channel.onCordovaReady.subscribe(function() {
-		 channel.onCordovaInfoReady.fire();      
+          console.log("scall ready");
+		// channel.onCordovaInfoReady.fire();
+         channel.initializationComplete('onCordovaScallReady');      
     });
 }
 
