@@ -41,11 +41,11 @@ function Scall() {
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
 Scall.prototype.register = function(successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'Scall.register', arguments);
+    //argscheck.checkArgs('fF', 'Scall.register', arguments);
     exec(successCallback, errorCallback, "Scall", "register", []);
 };
 Scall.prototype.unregister = function(successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'Scall.unregister', arguments);
+  //  argscheck.checkArgs('fF', 'Scall.unregister', arguments);
     exec(successCallback, errorCallback, "Scall", "unregister", []);
 };
 Scall.prototype.call = function(url,successCallback, errorCallback) {
