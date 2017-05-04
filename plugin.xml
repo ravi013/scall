@@ -47,8 +47,27 @@
 		<!--<resource-file src="src/android/rtcc-6.3.5.jar" target="libs/rtcc.jar"/>-->
 
     </platform>
-
-   
-
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Scall">
+                <param name="ios-package" value="CDVScall"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="Scall">
+            <dict>
+                <key>NSCameraUsageDescription</key>
+                <string>Need access to make video call</string>
+            </dict>
+            <dict>
+                <key>NSMicrophoneUsageDescription</key>
+                <string>Need access to make audio call</string>
+            </dict>
+        </config-file>
+        <framework src="lib/ios/LSUniversalSDK.framework" custom="true" />
+        <header-file src="src/ios/CDVScall.h" />
+        <source-file src="src/ios/CDVScall.m" />
+    </platform>
 
 </plugin>

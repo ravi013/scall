@@ -91,8 +91,8 @@ public class Scall extends CordovaPlugin {
             callbackContext.success();
         }
         else  if ("call".equals(action)) {
-            final JSONObject options = args.getJSONObject(0);
-            final String url = options.getString("url");
+           
+            final String url = args.getString(0);
             
             Universal.start(url  /*java.lang.String*/);
             callbackContext.success();

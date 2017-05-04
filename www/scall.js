@@ -49,7 +49,7 @@ Scall.prototype.unregister = function(successCallback, errorCallback) {
     exec(successCallback, errorCallback, "Scall", "unregister", []);
 };
 Scall.prototype.call = function(url,successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "Scall", "call", [{url:url}]);
+    exec(successCallback, errorCallback, "Scall", "call", [url]);
 };
 
 module.exports = new Scall();
