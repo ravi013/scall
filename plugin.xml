@@ -54,17 +54,13 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-        
-        <config-file target="*-Info.plist" parent="Scall">
-            <dict>
-                <key>NSCameraUsageDescription</key>
-                <string>Need access to make video call</string>
-            </dict>
-            <dict>
-                <key>NSMicrophoneUsageDescription</key>
-                <string>Need access to make audio call</string>
-            </dict>
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>Need access to make audio call</string>
         </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>Need access to take pictures and make video call</string>
+        </config-file>
+        
         <framework src="lib/ios/LSUniversalSDK.framework" custom="true" />
         <header-file src="src/ios/CDVScall.h" />
         <source-file src="src/ios/CDVScall.m" />
