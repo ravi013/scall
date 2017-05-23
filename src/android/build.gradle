@@ -13,7 +13,7 @@ url 'https://s3.amazonaws.com/sightcall.maven.release'
 
 dependencies {
 compile fileTree(dir: 'libs', include: ['*.jar'])
-compile 'com.sightcall.universal:universal-sdk:2.11.0' // verify the latest version
+compile 'com.sightcall.universal:universal-sdk:+' // verify the latest version
 
 
 }
