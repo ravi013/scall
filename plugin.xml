@@ -55,10 +55,10 @@
             </feature>
         </config-file>
         <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
-            <string>Need access to make audio call</string>
+            <string>Smart call allows you to video/audio call our supervisor. We would need access to establish a successful connection with the offshore supervisor</string>
         </config-file>
         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>Need access to take pictures and make video call</string>
+            <string>Smart call allows you to video/audio call our supervisor. We would need access to establish a successful connection with the offshore supervisor</string>
         </config-file>
         
         <framework src="lib/ios/LSUniversalSDK.framework" custom="true" />
